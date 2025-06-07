@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sneaker Product Page</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <div class="page-container">
     <header class="navbar">
       <div class="nav-left">
-        <img src="images/logo.svg" alt="Logo" class="logo">
+        <img src="images/logo.svg" alt="Logo" class="logo" />
         <ul class="nav-links">
           <li><a href="#">Collections</a></li>
           <li><a href="#">Men</a></li>
@@ -22,27 +22,37 @@
         </ul>
       </div>
       <div class="nav-right">
-        <img src="images/icon-cart.svg" alt="Cart" class="cart-icon">
-        <img src="images/image-avatar.png" alt="User Avatar" class="avatar">
+        <div class="cart-container">
+          <img src="images/icon-cart.svg" alt="Cart" class="cart-icon" id="cart-icon" />
+          <div class="cart-dropdown hidden" id="cart-dropdown">
+            <p class="cart-title">Cart</p>
+            <div class="cart-content" id="cart-content">
+              <p class="empty-cart">Your cart is empty.</p>
+            </div>
+          </div>
+        </div>
+        <img src="images/image-avatar.png" alt="User Avatar" class="avatar" />
       </div>
     </header>
-    <hr class="navbar-divider">
+    <hr class="navbar-divider" />
 
     <main class="product-gallery">
       <div class="product-images">
-        <img src="images/image-product-1.jpg" alt="Product" class="main-image">
+        <img src="images/image-product-1.jpg" alt="Product" class="main-image" id="main-image" />
         <div class="thumbnails">
-          <img src="images/image-product-1-thumbnail.jpg" alt="Thumbnail 1">
-          <img src="images/image-product-2-thumbnail.jpg" alt="Thumbnail 2">
-          <img src="images/image-product-3-thumbnail.jpg" alt="Thumbnail 3">
-          <img src="images/image-product-4-thumbnail.jpg" alt="Thumbnail 4">
+          <img src="images/image-product-1-thumbnail.jpg" alt="Thumbnail 1" class="thumbnail" data-image="1" />
+          <img src="images/image-product-2-thumbnail.jpg" alt="Thumbnail 2" class="thumbnail" data-image="2" />
+          <img src="images/image-product-3-thumbnail.jpg" alt="Thumbnail 3" class="thumbnail" data-image="3" />
+          <img src="images/image-product-4-thumbnail.jpg" alt="Thumbnail 4" class="thumbnail" data-image="4" />
         </div>
       </div>
       <div class="product-details">
         <h2 class="company">Sneaker Company</h2>
         <h1 class="product-title">Fall Limited Edition Sneakers</h1>
-        <p class="product-description">These low-profile sneakers are your perfect casual wear companion. Featuring a
-          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <p class="product-description">
+          These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
         <div class="price-info">
           <span class="price">$125.00</span>
           <span class="discount">50%</span>
@@ -50,17 +60,25 @@
         <div class="original-price">$250.00</div>
         <div class="add-to-cart">
           <div class="quantity-selector">
-            <button><img src="images/icon-minus.svg" alt="Minus"></button>
-            <span>0</span>
-            <button><img src="images/icon-plus.svg" alt="Plus"></button>
+            <button class="qty-btn" id="decrease"><img src="images/icon-minus.svg" alt="Minus" /></button>
+            <span id="quantity">0</span>
+            <button class="qty-btn" id="increase"><img src="images/icon-plus.svg" alt="Plus" /></button>
           </div>
-          <button class="add-button">
-            <img src="images/icon-cart.svg" alt="Cart Icon"> Add to cart
+          <button class="add-button" id="add-to-cart">
+            <img src="images/icon-cart.svg" alt="Cart Icon" /> Add to cart
           </button>
         </div>
       </div>
     </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox hidden">
+      <span id="close-lightbox">&times;</span>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="Zoomed Image" />
+    </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
