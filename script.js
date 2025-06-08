@@ -1,4 +1,4 @@
-// Lightbox functionality
+
 const mainImage = document.getElementById("main-image");
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
@@ -13,7 +13,7 @@ closeLightbox.addEventListener("click", () => {
   lightbox.classList.add("hidden");
 });
 
-// Thumbnail switching
+
 const thumbnails = document.querySelectorAll(".thumbnail");
 thumbnails.forEach((thumb) => {
   thumb.addEventListener("click", () => {
@@ -22,7 +22,7 @@ thumbnails.forEach((thumb) => {
   });
 });
 
-// Quantity and Add to Cart
+
 let quantity = 0;
 const quantityDisplay = document.getElementById("quantity");
 document.getElementById("increase").addEventListener("click", () => {
@@ -55,7 +55,7 @@ document.getElementById("add-to-cart").addEventListener("click", () => {
   }
 });
 
-// Cart toggle
+
 const cartIcon = document.getElementById("cart-icon");
 const cartDropdown = document.getElementById("cart-dropdown");
 
@@ -63,7 +63,7 @@ cartIcon.addEventListener("click", () => {
   cartDropdown.classList.toggle("hidden");
 });
 
-// Remove item
+
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("remove-item")) {
     document.getElementById("cart-content").innerHTML = `<p class="empty-cart">Your cart is empty.</p>`;

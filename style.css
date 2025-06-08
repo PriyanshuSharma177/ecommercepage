@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,14 +11,14 @@ body {
   color: #333;
 }
 
-/* Page Container */
+
 .page-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Navbar */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -58,7 +58,7 @@ body {
   width: 100%;
 }
 
-/* Navbar right */
+
 .nav-right {
   display: flex;
   align-items: center;
@@ -72,7 +72,7 @@ body {
   cursor: pointer;
 }
 
-/* Cart Dropdown */
+
 .cart-container {
   position: relative;
 }
@@ -116,12 +116,12 @@ body {
   height: 14px;
 }
 
-/* Hidden Class */
+
 .hidden {
   display: none !important;
 }
 
-/* Product Gallery Layout */
+
 .product-gallery {
   display: flex;
   gap: 50px;
@@ -158,7 +158,7 @@ body {
   opacity: 0.6;
 }
 
-/* Product Details */
+
 .product-details {
   flex: 1;
   padding-top: 40px;
@@ -210,7 +210,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Add to Cart */
+
 .add-to-cart {
   display: flex;
   gap: 20px;
@@ -251,7 +251,7 @@ body {
   opacity: 0.85;
 }
 
-/* Lightbox */
+
 .lightbox {
   position: fixed;
   top: 0;
@@ -278,4 +278,62 @@ body {
   font-size: 2rem;
   color: white;
   cursor: pointer;
+}
+
+
+.nav-links a:hover {
+  color: black;
+  border-bottom: 2px black;
+}
+
+
+.thumbnails img:hover {
+  opacity: 0.7;
+  border: 2px solid black;
+}
+
+
+.add-button:hover {
+  background-color: black;
+  box-shadow: 0 8px 20px rgba(255, 125, 26, 0.3);
+  transform: translateY(-1px);
+}
+
+
+.qty-btn:hover {
+  color: hsl(26, 100%, 55%);
+  font-weight: bold;
+}
+
+#cart-icon:hover {
+  filter: brightness(0.8);
+  cursor: pointer;
+}
+
+
+.remove-item:hover {
+  filter: brightness(0.7);
+  transform: scale(1.2);
+  transition: 0.2s ease;
+}
+
+
+.avatar:hover {
+  outline: 2px solid white;
+  outline-offset: 2px;
+  cursor: pointer;
+}
+
+
+.main-image:hover {
+  opacity: 0.9;
+  transform: scale(1.01);
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+#close-lightbox:hover {
+  color:white;
+  transform: scale(1.1);
 }
