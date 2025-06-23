@@ -402,6 +402,21 @@ body {
 .hidden {
   display: none !important;
 }
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-cart {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+}
+
+.close-cart:hover {
+  color: black;
+}
 
 
 @media (max-width: 768px) {

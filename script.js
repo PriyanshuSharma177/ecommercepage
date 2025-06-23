@@ -134,3 +134,24 @@ hamburgerBtn?.addEventListener("click", () => {
 closeNav?.addEventListener("click", () => {
   mobileNav.classList.add("hidden");
 });
+document.getElementById("close-cart-mobile").addEventListener("click", () => {
+  document.getElementById("cart-dropdown").classList.add("hidden");
+});
+
+document.getElementById("close-cart-desktop").addEventListener("click", () => {
+  document.getElementById("cart-dropdown-desktop").classList.add("hidden");
+});
+
+document.addEventListener("click", (event) => {
+  const isCartClick =
+    event.target.closest("#cart-dropdown") ||
+    event.target.closest("#cart-icon-mobile") ||
+    event.target.closest("#cart-icon") ||
+    event.target.closest("#cart-dropdown-desktop");
+
+  if (!isCartClick) {
+    cartDropdown?.classList.add("hidden");
+    cartDropdownDesktop?.classList.add("hidden");
+  }
+});
+

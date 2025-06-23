@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,10 +8,9 @@
 </head>
 
 <body>
-
   <div class="page-container">
 
-
+ 
     <header class="mobile-header">
       <div id="hamburger-btn">
         <img src="images/icon-menu.svg" alt="Menu" />
@@ -24,10 +22,10 @@
       </div>
     </header>
 
-
+  
     <nav class="mobile-nav hidden" id="mobile-nav">
       <div id="close-nav">&times;</div>
-      <ul>
+      <ul class="mobile-links">
         <li><a href="#">Collections</a></li>
         <li><a href="#">Men</a></li>
         <li><a href="#">Women</a></li>
@@ -56,14 +54,29 @@
 
     <hr class="navbar-divider" />
 
-
+    
     <div class="cart-dropdown hidden" id="cart-dropdown">
-      <p class="cart-title">Cart</p>
+      <div class="cart-header">
+        <p class="cart-title">Cart</p>
+        <span class="close-cart" id="close-cart-mobile">&times;</span>
+      </div>
       <div class="cart-content" id="cart-content">
         <p class="empty-cart">Your cart is empty.</p>
       </div>
     </div>
 
+   
+    <div class="cart-dropdown hidden" id="cart-dropdown-desktop">
+      <div class="cart-header">
+        <p class="cart-title">Cart</p>
+        <span class="close-cart" id="close-cart-desktop">&times;</span>
+      </div>
+      <div class="cart-content" id="cart-content-desktop">
+        <p class="empty-cart">Your cart is empty.</p>
+      </div>
+    </div>
+
+    
     <main class="product-gallery">
       <div class="product-images">
         <button class="carousel-btn" id="prev-btn">&#10094;</button>
@@ -102,7 +115,7 @@
       </div>
     </main>
 
-
+  
     <div class="lightbox hidden" id="lightbox">
       <span id="close-lightbox">&times;</span>
       <img src="" alt="Zoomed Product" class="lightbox-image" id="lightbox-image" />
@@ -112,5 +125,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
