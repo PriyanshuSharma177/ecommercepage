@@ -2,19 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sneaker Product Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Page</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <div class="page-container">
 
- 
+    <!-- Mobile Header -->
     <header class="mobile-header">
-      <div id="hamburger-btn">
-        <img src="images/icon-menu.svg" alt="Menu" />
-      </div>
+      <div id="hamburger-btn"><img src="images/icon-menu.svg" alt="Menu" /></div>
       <img src="images/logo.svg" alt="Logo" class="logo" />
       <div class="mobile-icons">
         <img src="images/icon-cart.svg" alt="Cart" id="cart-icon-mobile" class="cart-icon" />
@@ -22,7 +19,7 @@
       </div>
     </header>
 
-  
+    <!-- Mobile Nav -->
     <nav class="mobile-nav hidden" id="mobile-nav">
       <div id="close-nav">&times;</div>
       <ul class="mobile-links">
@@ -34,7 +31,7 @@
       </ul>
     </nav>
 
-
+    <!-- Desktop Navbar -->
     <header class="navbar">
       <div class="nav-left">
         <img src="images/logo.svg" alt="Logo" class="logo" />
@@ -54,7 +51,7 @@
 
     <hr class="navbar-divider" />
 
-    
+    <!-- Cart Dropdown (Mobile) -->
     <div class="cart-dropdown hidden" id="cart-dropdown">
       <div class="cart-header">
         <p class="cart-title">Cart</p>
@@ -65,7 +62,7 @@
       </div>
     </div>
 
-   
+    <!-- Cart Dropdown (Desktop) -->
     <div class="cart-dropdown hidden" id="cart-dropdown-desktop">
       <div class="cart-header">
         <p class="cart-title">Cart</p>
@@ -76,32 +73,26 @@
       </div>
     </div>
 
-    
+    <!-- Product Gallery -->
     <main class="product-gallery">
       <div class="product-images">
         <button class="carousel-btn" id="prev-btn">&#10094;</button>
-        <img src="images/image-product-1.jpg" alt="Main Product" class="main-image" id="main-image" />
+        <img src="" alt="Main Product" class="main-image" id="main-image" />
         <button class="carousel-btn" id="next-btn">&#10095;</button>
-        <div class="thumbnails">
-          <img src="images/image-product-1-thumbnail.jpg" data-image="1" class="thumbnail" />
-          <img src="images/image-product-2-thumbnail.jpg" data-image="2" class="thumbnail" />
-          <img src="images/image-product-3-thumbnail.jpg" data-image="3" class="thumbnail" />
-          <img src="images/image-product-4-thumbnail.jpg" data-image="4" class="thumbnail" />
-        </div>
+        <div class="thumbnails" id="thumbnail-container"></div>
       </div>
 
       <div class="product-details">
-        <h2 class="company">Sneaker Company</h2>
-        <h1 class="product-title">Fall Limited Edition Sneakers</h1>
-        <p class="product-description">
-          These low-profile sneakers are your perfect casual wear companion. Featuring a
-          durable rubber outer sole, they’ll withstand everything the weather can offer.
-        </p>
+        <h2 class="company" id="company-name">Sneaker Company</h2>
+        <h1 class="product-title" id="product-title">Product Title</h1>
+        <p class="product-description" id="product-description">Product description goes here.</p>
+
         <div class="price-info">
-          <span class="price">$125.00</span>
-          <span class="discount">50%</span>
+          <span class="price" id="product-price">$0.00</span>
+          <span class="discount" id="product-discount">50%</span>
         </div>
-        <div class="original-price">$250.00</div>
+        <div class="original-price" id="original-price">$0.00</div>
+
         <div class="add-to-cart">
           <div class="quantity-selector">
             <button id="decrease"><img src="images/icon-minus.svg" alt="Minus" /></button>
@@ -115,7 +106,7 @@
       </div>
     </main>
 
-  
+    <!-- Lightbox -->
     <div class="lightbox hidden" id="lightbox">
       <span id="close-lightbox">&times;</span>
       <img src="" alt="Zoomed Product" class="lightbox-image" id="lightbox-image" />

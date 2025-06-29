@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Fall Limited Edition Sneakers",
+    "price": 125.00,
+    "image": "images/image-product-1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Summer Street Sneakers",
+    "price": 110.00,
+    "image": "images/image-product-2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Urban Night Runners",
+    "price": 98.00,
+    "image": "images/image-product-3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Minimalist Canvas Sneakers",
+    "price": 79.00,
+    "image": "images/image-product-4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Classic White Trainers",
+    "price": 120.00,
+    "image": "images/image-product-1.jpg"
+  }
+]
