@@ -16,7 +16,7 @@ fetch("products.json")
     });
   });
 
-// Show cart count from localStorage
+
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);

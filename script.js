@@ -1,4 +1,4 @@
-// Product data (mock database)
+
 const products = {
   1: {
     name: "Fall Limited Edition Sneakers",
@@ -62,12 +62,12 @@ const products = {
   }
 };
 
-// Get product ID from URL
+
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get("id") || "1";
 const product = products[productId];
 
-// DOM Elements
+
 const mainImage = document.getElementById("main-image");
 const thumbnailContainer = document.getElementById("thumbnail-container");
 const lightbox = document.getElementById("lightbox");
@@ -81,13 +81,13 @@ const description = document.getElementById("product-description");
 
 let currentIndex = 0;
 
-// Load product data
+
 function loadProduct() {
   title.textContent = product.name;
   price.textContent = `$${product.price.toFixed(2)}`;
   originalPrice.textContent = `$${(product.price * 2).toFixed(2)}`;
 
-  // ✅ Show full description only for Fall Limited Edition Sneakers
+
   if (product.name === "Fall Limited Edition Sneakers") {
     description.textContent = product.description;
   } else {
@@ -96,7 +96,7 @@ function loadProduct() {
 
   updateMainImage(0);
 
-  // Load thumbnails
+
   thumbnailContainer.innerHTML = "";
   product.mainImages.forEach((src, index) => {
     const thumb = document.createElement("img");
@@ -111,7 +111,7 @@ function loadProduct() {
   });
 }
 
-// Update main image
+
 function updateMainImage(index) {
   mainImage.src = product.mainImages[index];
   const thumbnails = document.querySelectorAll(".thumbnail");
@@ -120,7 +120,7 @@ function updateMainImage(index) {
   });
 }
 
-// Lightbox
+
 mainImage.addEventListener("click", () => {
   lightboxImage.src = mainImage.src;
   lightbox.classList.remove("hidden");
@@ -129,7 +129,7 @@ closeLightbox.addEventListener("click", () => {
   lightbox.classList.add("hidden");
 });
 
-// Carousel
+
 document.getElementById("prev-btn")?.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + product.mainImages.length) % product.mainImages.length;
   updateMainImage(currentIndex);
@@ -139,7 +139,7 @@ document.getElementById("next-btn")?.addEventListener("click", () => {
   updateMainImage(currentIndex);
 });
 
-// Quantity
+
 let quantity = 0;
 const quantityDisplay = document.getElementById("quantity");
 document.getElementById("increase").addEventListener("click", () => {
@@ -151,7 +151,7 @@ document.getElementById("decrease").addEventListener("click", () => {
   quantityDisplay.textContent = quantity;
 });
 
-// Cart
+
 let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
 function saveCart() {
@@ -210,7 +210,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Cart toggle
+
 document.getElementById("cart-icon")?.addEventListener("click", () => {
   document.getElementById("cart-dropdown-desktop").classList.toggle("hidden");
 });
@@ -224,7 +224,7 @@ document.getElementById("close-cart-mobile")?.addEventListener("click", () => {
   document.getElementById("cart-dropdown").classList.add("hidden");
 });
 
-// Close cart on outside click
+
 document.addEventListener("click", (e) => {
   if (
     !e.target.closest("#cart-dropdown") &&

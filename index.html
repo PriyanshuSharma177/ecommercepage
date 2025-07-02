@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- ✅ Mobile Header -->
+  
   <header class="mobile-header">
     <div id="hamburger-btn"><img src="images/icon-menu.svg" alt="Menu" /></div>
     <img src="images/logo.svg" alt="Logo" class="logo" />
@@ -18,7 +18,7 @@
     </div>
   </header>
 
-  <!-- ✅ Mobile Navigation -->
+
   <nav class="mobile-nav hidden" id="mobile-nav">
     <div id="close-nav">&times;</div>
     <ul class="mobile-links">
@@ -30,7 +30,7 @@
     </ul>
   </nav>
 
-  <!-- ✅ Desktop Navbar -->
+ 
   <header class="navbar">
     <div class="nav-left">
       <img src="images/logo.svg" alt="Logo" class="logo" />
@@ -50,7 +50,7 @@
 
   <hr class="navbar-divider" />
 
-  <!-- ✅ Cart Dropdown -->
+
   <div class="cart-dropdown hidden" id="cart-dropdown-desktop">
     <div class="cart-header">
       <p class="cart-title">Cart</p>
@@ -61,7 +61,7 @@
     </div>
   </div>
 
-  <!-- ✅ Product List -->
+
   <main class="product-list">
     <a href="ecommerce.html?id=1" class="product-card">
       <img src="images/image-product-1.jpg" alt="Product 1" />
@@ -94,9 +94,9 @@
     </a>
   </main>
 
-  <!-- ✅ JavaScript -->
+
   <script>
-    // Mobile Nav Toggle
+
     document.getElementById("hamburger-btn")?.addEventListener("click", () => {
       document.getElementById("mobile-nav")?.classList.remove("hidden");
     });
@@ -105,22 +105,21 @@
       document.getElementById("mobile-nav")?.classList.add("hidden");
     });
 
-    // Mobile Cart Toggle
     document.getElementById("cart-icon-mobile")?.addEventListener("click", () => {
       document.getElementById("cart-dropdown-desktop")?.classList.toggle("hidden");
     });
 
-    // Desktop Cart Toggle
+
     document.getElementById("cart-icon")?.addEventListener("click", () => {
       document.getElementById("cart-dropdown-desktop")?.classList.toggle("hidden");
     });
 
-    // Close cart dropdown
+
     document.getElementById("close-cart-desktop")?.addEventListener("click", () => {
       document.getElementById("cart-dropdown-desktop")?.classList.add("hidden");
     });
 
-    // Load Cart
+
     function loadCart() {
       const cart = JSON.parse(localStorage.getItem("cart")) || {};
       const products = {
@@ -158,7 +157,7 @@
 
       cartContent.innerHTML = html;
 
-      // Remove functionality
+    
       document.querySelectorAll(".remove-item").forEach(btn => {
         btn.addEventListener("click", () => {
           const id = btn.dataset.id;
@@ -169,7 +168,7 @@
       });
     }
 
-    // Load on page ready
+   
     window.addEventListener("DOMContentLoaded", loadCart);
   </script>
 
