@@ -8,7 +8,29 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- ✅ Mobile Header -->
+  <header class="mobile-header">
+    <div id="hamburger-btn"><img src="images/icon-menu.svg" alt="Menu" /></div>
+    <img src="images/logo.svg" alt="Logo" class="logo" />
+    <div class="mobile-icons">
+      <img src="images/icon-cart.svg" alt="Cart" id="cart-icon-mobile" class="cart-icon" />
+      <img src="images/image-avatar.png" alt="User Avatar" class="avatar" />
+    </div>
+  </header>
+
+  <!-- ✅ Mobile Navigation -->
+  <nav class="mobile-nav hidden" id="mobile-nav">
+    <div id="close-nav">&times;</div>
+    <ul class="mobile-links">
+      <li><a href="#">Collections</a></li>
+      <li><a href="#">Men</a></li>
+      <li><a href="#">Women</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✅ Desktop Navbar -->
   <header class="navbar">
     <div class="nav-left">
       <img src="images/logo.svg" alt="Logo" class="logo" />
@@ -21,54 +43,135 @@
       </ul>
     </div>
     <div class="nav-right">
-      <a href="ecommerce.html" id="cart-icon">
-        <img src="images/icon-cart.svg" alt="Cart" class="cart-icon" />
-      </a>
+      <img src="images/icon-cart.svg" alt="Cart" id="cart-icon" class="cart-icon" />
       <img src="images/image-avatar.png" alt="User Avatar" class="avatar" />
     </div>
   </header>
 
   <hr class="navbar-divider" />
 
-  <!-- Product List -->
-  <main class="product-list">
+  <!-- ✅ Cart Dropdown -->
+  <div class="cart-dropdown hidden" id="cart-dropdown-desktop">
+    <div class="cart-header">
+      <p class="cart-title">Cart</p>
+      <span class="close-cart" id="close-cart-desktop">&times;</span>
+    </div>
+    <div class="cart-content" id="cart-content-desktop">
+      <p class="empty-cart">Your cart is empty.</p>
+    </div>
+  </div>
 
-    <!-- Product 1 -->
+  <!-- ✅ Product List -->
+  <main class="product-list">
     <a href="ecommerce.html?id=1" class="product-card">
       <img src="images/image-product-1.jpg" alt="Product 1" />
       <h3>Fall Limited Edition Sneakers</h3>
       <p>$125.00</p>
     </a>
 
-    <!-- Product 2 -->
     <a href="ecommerce.html?id=2" class="product-card">
       <img src="images/image-product-2.jpg" alt="Product 2" />
       <h3>Summer Street Sneakers</h3>
       <p>$110.00</p>
     </a>
 
-    <!-- Product 3 -->
     <a href="ecommerce.html?id=3" class="product-card">
       <img src="images/image-product-3.jpg" alt="Product 3" />
       <h3>Urban Night Runners</h3>
       <p>$98.00</p>
     </a>
 
-    <!-- Product 4 -->
     <a href="ecommerce.html?id=4" class="product-card">
       <img src="images/image-product-4.jpg" alt="Product 4" />
       <h3>Minimalist Canvas Sneakers</h3>
       <p>$79.00</p>
     </a>
 
-    <!-- Product 5 -->
     <a href="ecommerce.html?id=5" class="product-card">
       <img src="images/image-product-1.jpg" alt="Product 5" />
       <h3>Classic White Trainers</h3>
       <p>$120.00</p>
     </a>
-
   </main>
+
+  <!-- ✅ JavaScript -->
+  <script>
+    // Mobile Nav Toggle
+    document.getElementById("hamburger-btn")?.addEventListener("click", () => {
+      document.getElementById("mobile-nav")?.classList.remove("hidden");
+    });
+
+    document.getElementById("close-nav")?.addEventListener("click", () => {
+      document.getElementById("mobile-nav")?.classList.add("hidden");
+    });
+
+    // Mobile Cart Toggle
+    document.getElementById("cart-icon-mobile")?.addEventListener("click", () => {
+      document.getElementById("cart-dropdown-desktop")?.classList.toggle("hidden");
+    });
+
+    // Desktop Cart Toggle
+    document.getElementById("cart-icon")?.addEventListener("click", () => {
+      document.getElementById("cart-dropdown-desktop")?.classList.toggle("hidden");
+    });
+
+    // Close cart dropdown
+    document.getElementById("close-cart-desktop")?.addEventListener("click", () => {
+      document.getElementById("cart-dropdown-desktop")?.classList.add("hidden");
+    });
+
+    // Load Cart
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || {};
+      const products = {
+        1: { name: "Fall Limited Edition Sneakers", price: 125, thumbnail: "images/image-product-1-thumbnail.jpg" },
+        2: { name: "Summer Street Sneakers", price: 110, thumbnail: "images/image-product-2-thumbnail.jpg" },
+        3: { name: "Urban Night Runners", price: 98, thumbnail: "images/image-product-3.jpg" },
+        4: { name: "Minimalist Canvas Sneakers", price: 79, thumbnail: "images/image-product-4.jpg" },
+        5: { name: "Classic White Trainers", price: 120, thumbnail: "images/image-product-1.jpg" }
+      };
+
+      const cartContent = document.getElementById("cart-content-desktop");
+
+      if (Object.keys(cart).length === 0) {
+        cartContent.innerHTML = `<p class="empty-cart">Your cart is empty.</p>`;
+        return;
+      }
+
+      let html = "";
+      for (const id in cart) {
+        const item = cart[id];
+        const product = products[id];
+        if (!product) continue;
+        const total = (product.price * item.quantity).toFixed(2);
+        html += `
+          <div class="cart-item" data-id="${id}">
+            <img src="${product.thumbnail}" alt="Product" class="cart-thumb" />
+            <div>
+              <p>${product.name}</p>
+              <p>$${product.price} x ${item.quantity} <strong>$${total}</strong></p>
+            </div>
+            <img src="images/icon-delete.svg" alt="Remove" class="remove-item" data-id="${id}" />
+          </div>
+        `;
+      }
+
+      cartContent.innerHTML = html;
+
+      // Remove functionality
+      document.querySelectorAll(".remove-item").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.id;
+          delete cart[id];
+          localStorage.setItem("cart", JSON.stringify(cart));
+          loadCart();
+        });
+      });
+    }
+
+    // Load on page ready
+    window.addEventListener("DOMContentLoaded", loadCart);
+  </script>
 
 </body>
 </html>

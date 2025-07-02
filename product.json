@@ -2,31 +2,81 @@
   {
     "id": 1,
     "title": "Fall Limited Edition Sneakers",
+    "company": "Sneaker Company",
+    "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
     "price": 125.00,
-    "image": "images/image-product-1.jpg"
+    "originalPrice": 250.00,
+    "discount": 50,
+    "images": [
+      "images/image-product-1.jpg",
+      "images/image-product-2.jpg",
+      "images/image-product-3.jpg",
+      "images/image-product-4.jpg"
+    ],
+    "thumbnail": "images/image-product-1-thumbnail.jpg"
   },
   {
     "id": 2,
     "title": "Summer Street Sneakers",
+    "company": "Sneaker Company",
+    "description": "Breezy and bright, these summer sneakers are built for comfort and style.",
     "price": 110.00,
-    "image": "images/image-product-2.jpg"
+    "originalPrice": 220.00,
+    "discount": 50,
+    "images": [
+      "images/image-product-2.jpg",
+      "images/image-product-3.jpg",
+      "images/image-product-4.jpg",
+      "images/image-product-1.jpg"
+    ],
+    "thumbnail": "images/image-product-2-thumbnail.jpg"
   },
   {
     "id": 3,
     "title": "Urban Night Runners",
+    "company": "Sneaker Company",
+    "description": "Sleek, dark sneakers designed for late-night city runs and urban exploration.",
     "price": 98.00,
-    "image": "images/image-product-3.jpg"
+    "originalPrice": 196.00,
+    "discount": 50,
+    "images": [
+      "images/image-product-3.jpg",
+      "images/image-product-4.jpg",
+      "images/image-product-1.jpg",
+      "images/image-product-2.jpg"
+    ],
+    "thumbnail": "images/image-product-3-thumbnail.jpg"
   },
   {
     "id": 4,
     "title": "Minimalist Canvas Sneakers",
+    "company": "Sneaker Company",
+    "description": "Simple and versatile canvas sneakers perfect for any outfit.",
     "price": 79.00,
-    "image": "images/image-product-4.jpg"
+    "originalPrice": 158.00,
+    "discount": 50,
+    "images": [
+      "images/image-product-4.jpg",
+      "images/image-product-1.jpg",
+      "images/image-product-2.jpg",
+      "images/image-product-3.jpg"
+    ],
+    "thumbnail": "images/image-product-4-thumbnail.jpg"
   },
   {
     "id": 5,
     "title": "Classic White Trainers",
+    "company": "Sneaker Company",
+    "description": "Timeless and clean, these white trainers match every look.",
     "price": 120.00,
-    "image": "images/image-product-1.jpg"
+    "originalPrice": 240.00,
+    "discount": 50,
+    "images": [
+      "images/image-product-1.jpg",
+      "images/image-product-2.jpg",
+      "images/image-product-3.jpg",
+      "images/image-product-4.jpg"
+    ],
+    "thumbnail": "images/image-product-1-thumbnail.jpg"
   }
 ]
